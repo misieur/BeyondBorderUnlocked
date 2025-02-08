@@ -1,0 +1,12 @@
+name: BeyondBorderUnlocked
+version: 1.0
+main: com.maximde.beyondBorderUnlocked.BeyondBorderUnlocked
+api-version: 1.18
+depends: packetevents
+commands:
+  beyondborder:
+    description: Manage border settings
+    permission: beyondborder.admin
+permissions:
+  beyondborder.admin:
+    default: op

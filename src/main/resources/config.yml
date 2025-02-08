@@ -1,0 +1,12 @@
+damage:
+  enabled: true
+  buffer: 5.0
+  amount: 0.2
+building: false
+breaking: true
+walkthrough: true
+hitting: true
+blockOutline:
+  enabled: true
+  size: 0.009
+  block: black_stained_glass
