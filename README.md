@@ -68,10 +68,10 @@ and this plugin as a compile-only dependency:
 
 ```groovy
 repositories {
-	maven { url 'https://jitpack.io' }
+	maven { url "https://jitpack.io" }
 }
 dependencies {
-	implementation 'com.github.max1mde:BeyondBorderUnlocked:1.0.0'
+	compileOnly("com.github.max1mde:BeyondBorderUnlocked:1.0.0")
 }
 ```
 
