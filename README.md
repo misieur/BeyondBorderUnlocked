@@ -7,7 +7,7 @@
   <img src="https://github.com/user-attachments/assets/012f91e1-d872-4c0c-a9f8-829f5004d262">
   <br><br>
   <p>Leave a :star: if you like this plugin :octocat:</p>
-  <p>Bypass the vanilla worldborder building & combat limitations without any client side-mods!</p>
+  <p>Break or place blocks & damage entities behind the vanilla worldborder without any client side-mods!</p>
 </div>
 
 ## Features
