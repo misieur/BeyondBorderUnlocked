@@ -14,9 +14,9 @@
 - Bypass world border restrictions for:
   - Building and breaking blocks
   - Combat and entity interactions
-  - Player movement
-- Visual block outline system for blocks beyond border
-- Advanced block breaking animations and effects
+  - Player movement through border
+- Visual block outline system for blocks beyond border (using display entities)
+- Block breaking animations and effects
 - Realistic combat mechanics with critical hits & damage calculation based on armor and weapons
 
 ## Installation
