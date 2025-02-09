@@ -3,7 +3,8 @@
   [![Discord](https://img.shields.io/badge/Discord_Server-7289DA?style=flat&logo=discord&logoColor=white)](https://discord.gg/2UTkYj26B4)
   [![JitPack](https://jitpack.io/v/max1mde/BeyondBorderUnlocked.svg)](https://jitpack.io/#max1mde/BeyondBorderUnlocked)
   [![GitHub Downloads](https://img.shields.io/github/downloads/max1mde/BeyondBorderUnlocked/total?color=2ECC71)](https://github.com/max1mde/BeyondBorderUnlocked/releases)
-  
+  [![Minecraft version](https://img.shields.io/badge/Minecraft%20version-1.19_--_1.21-brightgreen.svg)](https://github.com/max1mde/BeyondBorderUnlocked)
+
   <img src="https://github.com/user-attachments/assets/012f91e1-d872-4c0c-a9f8-829f5004d262">
   <br><br>
   <p>Leave a :star: if you like this plugin :octocat:</p>
@@ -12,7 +13,8 @@
 
 ## Features
 - Bypass world border restrictions for:
-  - Building and breaking blocks
+  - Placing blocks (only possible by left clicking with a block)
+  - Breaking blocks
   - Combat and entity interactions
   - Player movement through border
 - Visual block outline system for blocks beyond border (using display entities)
@@ -20,9 +22,14 @@
 - Realistic combat mechanics with critical hits & damage calculation based on armor and weapons
 
 ## Installation
-1. Place the plugin JAR in your server's `plugins/` folder
+1. Place the plugin JAR and [packetevents.jar](https://www.spigotmc.org/resources/80279/) in your server's `plugins/` folder 
 2. Restart/reload your server
 3. Configure `plugins/BeyondBorderUnlocked/config.yml` to your needs
+
+> [!WARNING]
+> These actions beyond the world border are not intended by game design.  
+> Unexpected bugs may occur, and the experience will differ from normal gameplay.  
+> Test thoroughly before production use.
 
 ## Configuration (`config.yml`)
 ```yaml
@@ -32,7 +39,7 @@ walkthrough: true     # Allow walking through border
 hitting: true         # Allow hitting entities beyond border
 
 damage:
-  enabled: true       # Enable custom border damage settings below
+  enabled: true      # Enable custom border damage settings below (if false, the plugin does not modify the values below in your worlds)
   buffer: 5.0        # Distance before damage starts
   amount: 0.2        # Damage per second
 
@@ -47,9 +54,9 @@ blockOutline:
 - `/beyondborder set <setting> <value>` - Change settings
 
 Available settings:
-- `building`, `breaking`, `walkthrough`, `hitting` (true/false)
-- `damage.enabled`, `damage.buffer`, `damage.amount` (numbers)
-- `blockOutline.enabled`, `blockOutline.size`, `blockOutline.block`
+- `building`, `breaking`, `walkthrough`, `blockOutline.enabled`, `hitting` (true/false)
+- `damage.enabled`, `damage.buffer`, `blockOutline.size`, `damage.amount` (numbers)
+- `blockOutline.block` (text)
 
 **Permissions**:  
 `beyondborder.commands` - Access to commands (default: op)
@@ -80,6 +87,14 @@ public void onEntityDamage(AsyncEntityDamageBorderEvent event) {
 }
 ```
 
+## Known Issues
+
+- Blocks can only be placed using the left mouse button
+- Walking through the world border is buggy due to required player teleportation
+- Blocks sometimes continue breaking without holding the mouse button, or breaking progress resets even when holding the left mouse button
+- The block selection outline box has incorrect sizing for certain blocks
+- Mechanics such as block breaking, damage calculations, and other interactions are not entirely accurate
+
 ## How does it work?
 
 By default, Minecraft clients don't send certain packets when behind the world border:
@@ -100,8 +115,3 @@ The block selection outline is created using:
 - Only visible to the player looking at the block
 
 Because of that, the `building` feature does not work when right-clicking, as the client does not send any packets when right-clicking beyond the world border. The only packet sent is the arm animation packet when the player left-clicks.
-
-## Requirements
-- Spigot/Paper 1.18.2+
-- Java 17+
-- PacketEvents
