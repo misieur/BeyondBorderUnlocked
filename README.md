@@ -63,16 +63,16 @@ Available settings:
 
 ## API Documentation
 
-To use the api add `depends: BeyondBorderUnlocked` to your plugin.yml
+To use the api add `depends: BeyondBorderUnlocked` to your plugin.yml  
 and this plugin as a compile-only dependency:
 
 ```groovy
-		repositories {
-			maven { url 'https://jitpack.io' }
-		}
-	  dependencies {
-      implementation 'com.github.max1mde:BeyondBorderUnlocked:1.0.0'
-	  }
+repositories {
+	maven { url 'https://jitpack.io' }
+}
+dependencies {
+	implementation 'com.github.max1mde:BeyondBorderUnlocked:1.0.0'
+}
 ```
 
 ### Accessing the API
