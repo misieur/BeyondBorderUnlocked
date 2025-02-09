@@ -9,6 +9,7 @@ import com.github.retrooper.packetevents.wrapper.play.server.WrapperPlayServerDe
 import com.maximde.beyondBorderUnlocked.mechanics.block.BlockBreakManager;
 import com.maximde.beyondBorderUnlocked.mechanics.border.BorderManager;
 import com.maximde.beyondBorderUnlocked.mechanics.outline.BlockOutlineManager;
+import com.maximde.beyondBorderUnlocked.utils.Metrics;
 import io.github.retrooper.packetevents.factory.spigot.SpigotPacketEventsBuilder;
 import lombok.Getter;
 import org.bukkit.Bukkit;
@@ -52,6 +53,8 @@ public final class BeyondBorderUnlocked extends JavaPlugin {
         instance = this;
         pluginConfig = new Config(this);
         getCommand("beyondborder").setExecutor(new Command(this));
+
+        new Metrics(this, 24714);
 
         PacketEvents.getAPI().getEventManager().registerListener(new InteractEntityPacketListener(this),
                 PacketListenerPriority.LOW);
