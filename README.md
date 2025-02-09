@@ -1,16 +1,14 @@
 <div align="center">
-  <h1>BeyondBorderUnlocked</h1>
-  
+
   [![Discord](https://img.shields.io/badge/Discord_Server-7289DA?style=flat&logo=discord&logoColor=white)](https://discord.gg/2UTkYj26B4)
   [![JitPack](https://jitpack.io/v/max1mde/BeyondBorderUnlocked.svg)](https://jitpack.io/#max1mde/BeyondBorderUnlocked)
   [![GitHub Downloads](https://img.shields.io/github/downloads/max1mde/BeyondBorderUnlocked/total?color=2ECC71)](https://github.com/max1mde/BeyondBorderUnlocked/releases)
-
-  <p>Bypass the vanilla worldborder building & combat limitations and go beyond the furthest point of the map</p>
-  <h3>Perfect for your <b>minigame server</b>!</h3>
+  
+  <img src="https://github.com/user-attachments/assets/012f91e1-d872-4c0c-a9f8-829f5004d262">
+  <br><br>
   <p>Leave a :star: if you like this plugin :octocat:</p>
+  <p>Bypass the vanilla worldborder building & combat limitations without any client side-mods!</p>
 </div>
-
-
 
 ## Features
 - Bypass world border restrictions for:
