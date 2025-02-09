@@ -46,7 +46,7 @@ damage:
 blockOutline:
   enabled: true      # Show block outlines beyond border
   size: 0.009        # Size of outline segments
-  block: BLACK_STAINED_GLASS  # Block type for outline
+  block: black_stained_glass  # Block type for outline
 ```
 
 ## Commands
