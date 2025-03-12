@@ -1,5 +1,7 @@
 package com.maximde.beyondBorderUnlocked.mechanics.border;
 
+import com.github.retrooper.packetevents.wrapper.play.server.WrapperPlayServerWorldBorderSize;
+import com.maximde.beyondBorderUnlocked.BeyondBorderUnlocked;
 import lombok.RequiredArgsConstructor;
 import org.bukkit.Location;
 import org.bukkit.WorldBorder;
@@ -32,7 +34,11 @@ public class BorderManager {
         Vector borderVec = calculateBorderVector(borderData);
 
         if (shouldTeleport(player, from, to, borderVec, borderData.center())) {
-            teleportPlayer(player);
+            WrapperPlayServerWorldBorderSize wrapperPlayServerWorldBorderSize = new WrapperPlayServerWorldBorderSize(player.getWorld().getWorldBorder().getSize()-0.5);
+            BeyondBorderUnlocked.getInstance().getPlayerManager().sendPacket(player, wrapperPlayServerWorldBorderSize);
+        } else {
+            WrapperPlayServerWorldBorderSize wrapperPlayServerWorldBorderSize = new WrapperPlayServerWorldBorderSize(player.getWorld().getWorldBorder().getSize());
+            BeyondBorderUnlocked.getInstance().getPlayerManager().sendPacket(player, wrapperPlayServerWorldBorderSize);
         }
     }
 
